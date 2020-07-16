@@ -1,7 +1,7 @@
 {
   "name": "geo-reverse",
   "version": "1.0.0",
-  "description": "geo reverse lookup latlng -> country",
+  "description": "A node.js module to find the country (and timezone) at specific gps coordinates",
   "main": "index.js",
   "dependencies": {
     "geo-tz": "^6.0.0"
