@@ -1,6 +1,6 @@
 {
   "name": "geo-reverse",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A node.js module to find the country (and timezone) at specific gps coordinates",
   "main": "index.js",
   "dependencies": {

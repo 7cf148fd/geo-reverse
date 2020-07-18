@@ -3,16 +3,17 @@
 
 A simple, local and fast module for node.js that returns in which country a geo-location (latitude, longitude) is.
 
-Most other geo-reversing packages rely on (usually expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes geo-reverse incompatible with browser use, sorry about that.
+Most other geo-reversing packages rely on (usually expensive) external resources such as Google. This package only uses local data, at the price of large size. This makes geo-reverse incompatible with browser use, sorry about that.
 
-Returns an Array of Objects:
+The module returns an Array of Objects:
 ```js
 [ { timeZone: 'time zone name',
     isoAlpha2: '2-letter ISO 3166-1 code',
     isoAlpha3: '3-letter ISO 3166-1 code',
     name: 'country name in the language of your choice (defaulting to English)'
    },
-  { ... // additional results in case of uncertainty, territory dispute, or location is on border
+  { ... // additional results in case of uncertainty, territory dispute,
+        // or if location is exactly on border
    }
  ]
 ```
