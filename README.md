@@ -3,22 +3,29 @@
 
 A simple, local and fast module for node.js that returns in which country a geo-location (latitude, longitude) is.
 
-Returns an Array:
+Most other geo-reversing packages rely on (usually expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes geo-reverse incompatible with browser use, sorry about that.
+
+Returns an Array of Objects:
 ```js
-[ 'time zone name',
-  '2-letter ISO 3166-1 code',
-  '3-letter ISO 3166-1 code',
-  'country name in the language of your choice (defaulting to English)'
+[ { timeZone: 'time zone name',
+    isoAlpha2: '2-letter ISO 3166-1 code',
+    isoAlpha3: '3-letter ISO 3166-1 code',
+    name: 'country name in the language of your choice (defaulting to English)'
+   },
+  { ... // additional results in case of uncertainty, territory dispute, or location is on border
+   }
  ]
 ```
 
-Both country codes and country name are set to `undefined` if the location is in the ocean.
+Country codes and country name are set to `undefined` if the location is in the ocean.
+
+Also please note that due to the ever-changing nature of borders, it is essential to keep the package regularly updated.
 
 ## Install
 
 `npm install geo-reverse`
 
-## Usage
+## Detailed usage
 
 ```js
 const geoRev = require('geo-reverse')
@@ -39,13 +46,6 @@ geoRev(43.839319, 87.526148)
 geoRev(0, 0)
 // [ { timeZone: 'Etc/GMT', isoAlpha2: undefined, isoAlpha3: undefined, name: undefined } ]
 ```
-
-## API Docs
-The API returns a list of possible countries and timezones: there are certain coordinates where the answer will depend on the person you ask (eg, Crimea) or if the location is exactly on the border.
-
-The underlying data is identified using a local database provided by `geo-tz`. Most other geo-reversing packages rely on (usually expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes it incompatible with browser use, sorry about that.
-
-Also please note that due to the ever-changing nature of borders, it is essential to keep the package updated.
 
 ## COPYRIGHT
 Copyright 2020 7cf148fd
