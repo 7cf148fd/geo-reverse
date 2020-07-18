@@ -9,11 +9,9 @@ Returns an Array with
 
 ## Install
 
-`npm install reverse-geo`
+`npm install geo-reverse`
 
 ## Usage
-
-`npm install reverse-geo`
 
 ```js
     const reverseGeo = require('reverse-geo')
