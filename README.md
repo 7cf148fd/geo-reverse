@@ -1,10 +1,30 @@
 # geo-reverse
 [![7CF](https://img.shields.io/static/v1?label=author&message=7cf&color=7cf&style=flat)](http://sept.cf) [![STATUS](https://img.shields.io/static/v1?label=status&message=public&color=191&style=flat)]() [![LICENSE](https://img.shields.io/static/v1?label=license&message=MIT&color=777&style=flat)](https://opensource.org/licenses/MIT)
 
-## 
-* 
-* 
-* 
+## Install
+
+`npm install reverse-geo`
+
+## Usage
+
+```js
+    const reverseGeo = require('reverse-geo')
+
+    reverseGeo(47.650499, -122.350070)
+	// [{ 'country':'United States', 'iso3166-2':'US', 'iso3166-3':'USA' }]
+    reverseGeo(43.839319, 87.526148)  // ['Asia/Shanghai', 'Asia/Urumqi']
+	// [{ 'country':'Asia/Shanghai', 'iso3166-2':'CN', 'iso3166-3':'CHN' }]
+    reverseGeo(0, 0)  // ['Etc/GMT', undefined, undefined]
+```
+
+## API Docs
+The API now returns a list of possible countries and timezones. There are certain coordinates where the answer will depend on the person you ask (eg, Crimea) or if the location is exactly on the border.
+
+Most other packages rely on (expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes it incompatible with browser use, sorry about that.
+
+### reverseGeo(lat, lon)
+Returns the list of countries found at `lat`, `lon`.
+The underlying data is identified using a local database 
 
 ## UPDATES
 ### 20200716
