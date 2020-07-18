@@ -1,7 +1,5 @@
 # geo-reverse
 [![7CF](https://img.shields.io/static/v1?label=author&message=7cf&color=7cf&style=flat)](http://sept.cf) [![VERSION](https://img.shields.io/github/package-json/v/7cf148fd/geo-reverse)](https://github.com/7cf148fd/geo-reverse) [![STATUS](https://img.shields.io/static/v1?label=status&message=public&color=191&style=flat)]() [![LICENSE](https://img.shields.io/static/v1?label=license&message=MIT&color=777&style=flat)](https://opensource.org/licenses/MIT)
-reverseGeo
-
 
 A simple, local and fast module for node.js that returns in which country a geo-location (latitude, longitude) is.
 
