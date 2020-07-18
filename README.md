@@ -7,27 +7,30 @@
 
 ## Usage
 
+`npm install reverse-geo`
+
 ```js
     const reverseGeo = require('reverse-geo')
 
-    reverseGeo(47.650499, -122.350070)
-	// [{ 'country':'United States', 'iso3166-2':'US', 'iso3166-3':'USA' }]
-    reverseGeo(43.839319, 87.526148)  // ['Asia/Shanghai', 'Asia/Urumqi']
-	// [{ 'country':'Asia/Shanghai', 'iso3166-2':'CN', 'iso3166-3':'CHN' }]
-    reverseGeo(0, 0)  // ['Etc/GMT', undefined, undefined]
+    // usage: reverseGeo( latitude, longitude, locale-for-country-name )
+    // locales are two-letter codes (ISO 639-1)
+
+    reverseGeo( 48.858262, 2.294513 )
+        // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: 'France' } ]
+    reverseGeo( 48.858262, 2.294513, "zh" )
+        // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: '法国' } ]
+    reverseGeo(43.839319, 87.526148)
+	// [ { timeZone: 'Asia/Urumqi', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' }, { timeZone: 'Asia/Shanghai', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' } ]
+    reverseGeo(0, 0)
+        // [ { timeZone: 'Etc/GMT', isoAlpha2: undefined, isoAlpha3: undefined, name: undefined } ]
 ```
 
 ## API Docs
-The API now returns a list of possible countries and timezones. There are certain coordinates where the answer will depend on the person you ask (eg, Crimea) or if the location is exactly on the border.
+The API returns a list of possible countries and timezones: there are certain coordinates where the answer will depend on the person you ask (eg, Crimea) or if the location is exactly on the border.
 
-Most other packages rely on (expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes it incompatible with browser use, sorry about that.
+The underlying data is identified using a local database provided by `geo-tz`. Most other geo-reversing packages rely on (usually expensive) external resources fetched. This package only uses local resources, at the price of large size, due to the `geo-tz` dependency. This makes it incompatible with browser use, sorry about that.
 
-### reverseGeo(lat, lon)
-Returns the list of countries found at `lat`, `lon`.
-The underlying data is identified using a local database 
-
-## UPDATES
-### 20200716
+Also please note that due to the ever-changing nature of borders, it is essential to keep the package updated.
 
 ## COPYRIGHT
 Copyright 2020 7cf148fd
