@@ -1,6 +1,12 @@
 # geo-reverse
 [![7CF](https://img.shields.io/static/v1?label=author&message=7cf&color=7cf&style=flat)](http://sept.cf) [![STATUS](https://img.shields.io/static/v1?label=status&message=public&color=191&style=flat)]() [![LICENSE](https://img.shields.io/static/v1?label=license&message=MIT&color=777&style=flat)](https://opensource.org/licenses/MIT)
 
+A simple, local and fast module that returns in which country a geo-location is.
+Returns an Array with
+- time zone name
+- 2-letter & 3-letter ISO 3166-1 codes, and
+- country name in the language of your choice (defaulting to English)
+
 ## Install
 
 `npm install reverse-geo`
@@ -12,8 +18,9 @@
 ```js
     const reverseGeo = require('reverse-geo')
 
-    // usage: reverseGeo( latitude, longitude, locale-for-country-name )
-    // locales are two-letter codes (ISO 639-1)
+    // usage: reverseGeo( latitude, longitude ) <- country name will be in English
+    // usage: reverseGeo( latitude, longitude, locale-for-country-name ) <- country name will be in language set by locale
+    //        locales are two-letter codes (ISO 639-1)
 
     reverseGeo( 48.858262, 2.294513 )
         // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: 'France' } ]
