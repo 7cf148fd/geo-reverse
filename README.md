@@ -14,20 +14,23 @@ Returns an Array with
 ## Usage
 
 ```js
-    const reverseGeo = require('reverse-geo')
+const reverseGeo = require('reverse-geo')
 
-    // usage: reverseGeo( latitude, longitude ) <- country name will be in English
-    // usage: reverseGeo( latitude, longitude, locale-for-country-name ) <- country name will be in language set by locale
-    //        locales are two-letter codes (ISO 639-1)
+// usage: reverseGeo( latitude, longitude ) <- country name will be in English
+// usage: reverseGeo( latitude, longitude, locale-for-country-name ) <- country name will be in language set by locale
+//        locales are two-letter codes (ISO 639-1)
 
-    reverseGeo( 48.858262, 2.294513 )
-        // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: 'France' } ]
-    reverseGeo( 48.858262, 2.294513, "zh" )
-        // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: '法国' } ]
-    reverseGeo(43.839319, 87.526148)
-	// [ { timeZone: 'Asia/Urumqi', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' }, { timeZone: 'Asia/Shanghai', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' } ]
-    reverseGeo(0, 0)
-        // [ { timeZone: 'Etc/GMT', isoAlpha2: undefined, isoAlpha3: undefined, name: undefined } ]
+reverseGeo( 48.858262, 2.294513 )
+// [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: 'France' } ]
+
+reverseGeo( 48.858262, 2.294513, "zh" )
+// [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: '法国' } ]
+
+reverseGeo(43.839319, 87.526148)
+// [ { timeZone: 'Asia/Urumqi', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' }, { timeZone: 'Asia/Shanghai', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' } ]
+
+reverseGeo(0, 0)
+// [ { timeZone: 'Etc/GMT', isoAlpha2: undefined, isoAlpha3: undefined, name: undefined } ]
 ```
 
 ## API Docs
