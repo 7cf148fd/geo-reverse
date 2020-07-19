@@ -38,16 +38,16 @@ const geoRev = require('geo-reverse')
 //        country name will be in the language set by locale
 //        locales are two-letter codes (ISO 639-1)
 
-geoRev( 48.858262, 2.294513 )
+geoRev.country( 48.858262, 2.294513 )
 // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: 'France' } ]
 
-geoRev( 48.858262, 2.294513, "zh" )
+geoRey.country( 48.858262, 2.294513, "zh" )
 // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: '法国' } ]
 
-geoRev(43.839319, 87.526148)
+geoRev.country(43.839319, 87.526148)
 // [ { timeZone: 'Asia/Urumqi', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' },
 //   { timeZone: 'Asia/Shanghai', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' } ]
 
-geoRev(0, 0)
+geoRev.country(0, 0)
 // [ { timeZone: 'Etc/GMT', isoAlpha2: undefined, isoAlpha3: undefined, name: undefined } ]
 ```
