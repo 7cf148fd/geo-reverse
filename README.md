@@ -28,13 +28,15 @@ Also please note that due to the ever-changing nature of borders, it is essentia
 
 `npm install geo-reverse`
 
-## Detailed usage
+## Detailed usage and examples
 
 ```js
 const geoRev = require('geo-reverse')
 
-// usage: geoRev( latitude, longitude ) <- country name will be in English
-// usage: geoRev( latitude, longitude, locale-for-country-name )
+// usage: geoRev.country( latitude, longitude )
+//        country name will be in English
+//
+// usage: geoRev.country( latitude, longitude, locale-for-country-name )
 //        country name will be in the language set by locale
 //        locales are two-letter codes (ISO 639-1)
 
@@ -44,7 +46,7 @@ geoRev.country( 48.858262, 2.294513 )
 geoRey.country( 48.858262, 2.294513, "zh" )
 // [ { timeZone: 'Europe/Paris', isoAlpha2: 'FR', isoAlpha3: 'FRA', name: '法国' } ]
 
-geoRev.country(43.839319, 87.526148)
+geoRev.country( 43.839319, 87.526148 )
 // [ { timeZone: 'Asia/Urumqi', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' },
 //   { timeZone: 'Asia/Shanghai', isoAlpha2: 'CN', isoAlpha3: 'CHN', name: 'China' } ]
 
