@@ -1,6 +1,6 @@
 {
   "name": "geo-reverse",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A node.js module to find the country (and timezone) at specific gps coordinates",
   "keywords": [ "timezone", "ISO3166", "ISO-3166", "country", "code", "latlong", "latlng", "latitude", "longitude", "reverse", "geocoding" ],
   "main": "index.js",
